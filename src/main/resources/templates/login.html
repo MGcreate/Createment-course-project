@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Login</title>
+	<link th:href="@{/css/styleLoginRegister.css}" rel="stylesheet" type="text/css" />
+	<script
+	src="https://kit.fontawesome.com/ce95e1eb1f.js"
+	crossorigin="anonymous"
+	></script>
+</head>
+<body>
+	<p th:if="${param.error}" style="color: darkred;">The password you entered was incorrect</p>
+	<form id="form_user_login" th:action="@{/login}" method="post" autocomplete="off">
+		<h3>Login</h3>
+
+		<div class="form-row">
+			<div class="container">
+				<div class="passwordbox">
+				  <input
+				  type="text"
+				  id="username"
+				  placeholder="username"
+				  name="username"
+				  />
+				</div>
+				<span id="username-error" class="error-message">username does not exist</span>
+			</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="container">
+			  <div class="passwordbox" id="passwordbox_front">
+				  <input
+				  type="password"
+				  id="passwordInput1"
+				  class="passwordInput"
+				  placeholder="password"
+				  name="password"
+				  />
+				  <i class="fas fa-eye" id="visible" onclick="makeInvisible()"></i>
+				  <i
+				  class="fas fa-eye-slash"
+				  id="invisible"
+				  onclick="makevisible()"
+				  ></i>
+				  <span id="pass-error" class="error-message">Please check your password</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<input type="submit" value="Sign In" onclick="return ValidateForm()"/>
+		</div>
+		<div>
+			<p>Not registered yet? go to the <a href="/register">Sign up</a> page</p>
+		</div>
+	</form>
+</body>
+<script th:src="@{/js/loginScript.js}" type="text/javascript"></script>
+</html>

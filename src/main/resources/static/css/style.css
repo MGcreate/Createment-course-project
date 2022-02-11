@@ -1,0 +1,329 @@
+body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin: 0 0 0 0;
+  font-family: Verdana;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333652;
+  border-radius: 10px;
+}
+
+#channel_menu {
+  display: grid;
+  align-content: flex-start;
+  background-color: #90adc6;
+  padding: 2px;
+  grid-template-columns: 1fr;
+  min-height: 97vh;
+}
+
+#channel_buttons {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#channel_buttons > p {
+  font-size: smaller;
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  background-color: #333652;
+  color: #e9eaec;
+  border-radius: 5px;
+  margin: 1px 2px 1px 2px;
+  min-height: fit-content;
+  word-break: break-all;
+}
+
+#channel_buttons > p:hover {
+  background-color: #fad02c;
+  color: #333652;
+  cursor: pointer;
+}
+
+#current_channel {
+  min-width: 300px;
+  display: grid;
+  grid-template-rows: fit-content(200px) 1fr;
+  min-height: 97vh;
+  background-color: #e9eaec;
+  padding: 10px 10px 10px 10px;
+}
+
+#channel_name_container {
+  max-width: 600px;
+  overflow-x: hidden;
+  width: calc(100% - 50px);
+  text-align: center;
+}
+
+#channel_name {
+  border-bottom: 2px solid #333652;
+  overflow-wrap: anywhere;
+  min-height: fit-content;
+  margin-block-end: 0px;
+}
+
+.singleMessage {
+  display: grid;
+  margin: 0 50px 10px 50px;
+  grid-template-areas:
+    "user timestamp"
+    "content content";
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 19px 1fr;
+}
+.singleMessage > * {
+  display: inline-block;
+}
+.messageContent {
+  grid-area: content;
+  word-break: break-word;
+}
+.messageUser {
+  grid-area: user;
+  font-weight: bold;
+  color: #333652;
+  font-size: smaller;
+}
+.messageTimestamp {
+  grid-area: timestamp;
+  margin-right: 20px;
+  width: fit-content;
+  font-size: small;
+  color: #888888;
+}
+
+#message_log {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  align-content: flex-start;
+}
+
+#message_input {
+  background: transparent;
+  height: 1.5em;
+  border: none;
+  width: calc(100% - 60px);
+  color: white;
+  resize: none;
+}
+
+#message_input:focus {
+  border-style: hidden;
+  outline: none;
+}
+
+#current_user {
+  font-weight: bold;
+  color: 333652;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+  background-color: #333652;
+  color: #e9eaec;
+  border-radius: 5px;
+  height: 38px;
+}
+
+#add_channel {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+  background-color: #333652;
+  color: #e9eaec;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#current_user > a:link {
+  color: #e9eaec;
+}
+#current_user > a:active {
+  color: #e9eaec;
+}
+#current_user > a:visited {
+  color: #e9eaec;
+}
+#current_user > a:hover {
+  color: #fad02c;
+}
+
+#textbox {
+  background-color: #333652;
+  display: flex;
+  min-height: 3em;
+  margin-right: 10%;
+  align-items: center;
+  padding: 0 0.8em;
+  border: 3px solid #e9eaec;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+#sendButton {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #90adc642;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+#submitButtonChannel {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #90adc642;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+#new_channel_name {
+  margin-top: 5px;
+  border-radius: 15px;
+  width: 95%;
+  text-align: center;
+}
+
+#submitButtonChannel:hover {
+  background-color: #fad02c;
+  color: #333652;
+}
+
+#sendButton:hover {
+  background-color: #90adc642;
+}
+
+#channelAlreadyExistsMessage {
+	font-size: x-small;
+	display: none;
+	color: #fad02c;
+	text-decoration: underline;
+}
+
+#channelNameError {
+  font-size: x-small;
+  display: none;
+  color: #fad02c;
+  text-decoration: underline;
+}
+
+.dayBreak {
+  border-bottom: 1.5px solid #888888;
+  width: calc(100% - 50px);
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  max-width: 600px;
+  color: #888888;
+  font-size: small;
+}
+
+#select_channel_sort {
+  display: flex;
+  margin: 0px 0 6px 0;
+  font-size: 0.8em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+  background-color: #333652;
+  color: #e9eaec;
+  border-radius: 5px;
+  height: 38px;
+}
+
+#select-container {
+  display: inline-block;
+  min-width: 13ch;
+  margin-left: 1em;
+  margin-top: 5px;
+  height: 1.2em;
+  border: 2px solid black;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-image: url("/images/arrow.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 1.2em;
+  background-position: 95% 10%;
+}
+
+#channel_sort_options {
+  max-width: 15ch;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  color: black;
+}
+
+#delete_channel {
+  font-weight: bold;
+  font-size: smaller;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+  background-color: #333652;
+  color: #e9eaec;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#deleteButtonChannel {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #90adc642;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+#deleteButtonChannel:hover {
+  background-color: #fad02c;
+  color: #333652;
+}

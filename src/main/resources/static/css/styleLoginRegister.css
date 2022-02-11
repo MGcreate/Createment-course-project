@@ -1,0 +1,175 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin: auto;
+  max-width: max-content;
+  text-align: center;
+  font-family: Verdana;
+  background-color: #e9eaec;
+  font-size: 1.1em;
+  box-sizing: border-box;
+}
+
+.form_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-row > label {
+  display: block;
+}
+
+#invalid_error {
+  color: red;
+}
+
+input[type="submit"] {
+  margin-top: 1vw;
+  margin-bottom: 2em;
+  padding: 5px 15px;
+  background: #ccc;
+  font-family: Verdana;
+  font-size: 0.9em;
+  border: 2px solid black;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  background: #bababa;
+}
+
+.container {
+  height: 20px;
+  width: 220px;
+  position: relative;
+  margin: 0 50%;
+  margin-bottom: 1.5em;
+  transform: translate(-50%);
+  background: rgb(86, 101, 121);
+  text-align: center;
+  padding: 15px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 4px;
+}
+
+::placeholder {
+  color: #000;
+}
+.passwordbox {
+  height: 100%;
+  width: 100%;
+}
+
+#passwordInput {
+  width: 85%;
+  padding-bottom: 5px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid black;
+  background: transparent;
+  left: 30px;
+  outline: none;
+  color: #fff;
+  font-color: #fff;
+}
+
+#username {
+  width: 85%;
+  padding-bottom: 5px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid black;
+  background: transparent;
+  left: 30px;
+  outline: none;
+  color: #fff;
+  font-color: #fff;
+}
+
+.passwordInput {
+  width: 85%;
+  padding-bottom: 5px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid black;
+  background: transparent;
+  left: 30px;
+  outline: none;
+  color: #fff;
+  font-color: #fff;
+}
+
+.passwordbox i {
+  position: absolute;
+  right: 20px;
+  bottom: 13px;
+  cursor: pointer;
+}
+
+#visible {
+  display: block;
+}
+
+#invisible {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+  font-size: 12px;
+  height: 0em;
+  width: 95%;
+  left: 2.5%;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  background: rgba(163, 193, 231, 1);
+  box-shadow: rgb(0 0 0 / 60%) 0px 6px 9px;
+  border-radius: 10px;
+}
+
+.dropdown div {
+  color: rgb(120, 40, 40);
+  font-size: 12px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 3 rgba(255, 255, 255, 0) inset !important;
+}
+
+#username-error-taken {
+  display: none;
+  bottom: -17px;
+  position: relative;
+}
+
+#username-error-length {
+  display: none;
+  bottom: -21px;
+}
+
+#username-error {
+  display: none;
+  bottom: -21px;
+}
+
+#pass-error {
+  display: none;
+  bottom: -21px;
+}
+
+.error-message {
+  justify-content: center;
+  position: absolute;
+  font-size: 0.8em;
+  color: darkred;
+}

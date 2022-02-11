@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <head>
+  	<script>window.isAdmin= false</script>
+    <script sec:authorize="hasAuthority('ADMIN')"> window.isAdmin= true</script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stuga</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav id="channel_menu" >
+      <div id="current_user">
+        <span>[[${#httpServletRequest.remoteUser}]]</span>
+        <a href="/logout"><small>switch user/logout</small></a>
+      </div>
+      <div id="add_channel">
+        <span>Add Channel</span>
+        <input id="new_channel_name" type="text" placeholder="3-20 characters..."/>
+        <span id="channelAlreadyExistsMessage">This name already exists</span>
+        <span id="channelNameError">No special characters allowed</span>
+        <input id="submitButtonChannel" type="submit" value="Add"/>
+      </div>
+      <div id="select_channel_sort">
+        <span>Sort by:</span>
+        <div id="select-container">
+          <select id="channel_sort_options" name="channel_sort_options">
+            <option value="sortByOid">Oldest First</option>
+            <option value="sortByOidReverse">Newest First</option>
+            <option value="sortAlphabetically">A-Z</option>
+            <option value="sortAlphabeticallyReverse">Z-A</option>
+          </select>
+        </div>
+      </div> 
+      <div id="delete_channel" sec:authorize="hasAuthority('ADMIN')">
+        <span>Delete current channel</span>
+        <input id="deleteButtonChannel" type="button" value="Delete"/>
+      </div>
+      <div id="channel_buttons"></div>
+    </nav>
+    <section id="current_channel">
+      <div id="channel_name_container">
+        <h2 id="channel_name"></h2>
+      </div>
+      <div id="message_log"></div>
+      <div id="textbox">
+        <textarea
+          type="text"
+          name="message"
+          id="message_input"
+          maxlength="1000"
+          placeholder="Type your message..."
+          oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+        ></textarea>
+        <input id="sendButton" type="button" value="send" />
+      </div>
+    </section>
+  </body>
+</html>

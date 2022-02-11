@@ -1,0 +1,18 @@
+insert into messenger values (129, 'Laurens', 'l');
+insert into messenger values (235, 'Daan', 'd');
+insert into messenger values (154, 'Bas', 'b');
+insert into messenger values (735, 'Ming', 'm');
+insert into channel values (1028, 'Channel 1');
+insert into message values (19248, 'Hoi Daan, hoe is het met jou?', '2022-01-17 16:30:21', 1028, 129);
+insert into message values (12375, 'Goed, en met jou?', '2022-01-17 16:30:54', 1028, 235);
+insert into message values (36546, 'Prima, toe aan weekend wel', '2022-01-17 16:31:21', 1028, 129);
+insert into message values (54647, 'Ik ook, gelukkig is het vrijdag', '2022-01-17 16:31:38', 1028, 235);
+insert into message values (13247, 'Hoe bedoel je? Het pas maandag :(', '2022-01-17 16:31:50', 1028, 129);
+insert into message values (49265, 'Oh shiiiit', '2022-01-17 16:32:02', 1028, 235);
+insert into channel values (1236, 'Channel 2');
+insert into message values (39563, 'Hi Daan, how are you?', '2022-01-17 16:30:21', 1236, 129);
+insert into message values (30673, 'Good, and you?', '2022-01-17 16:30:54', 1236, 235);
+insert into message values (10476, 'Fine, dying for it to be weekend though', '2022-01-17 16:31:21', 1236, 129);
+insert into message values (68367, 'Same here, TGIF', '2022-01-17 16:31:38', 1236, 235);
+insert into message values (29573, 'WDYM? Its literally only Monday :(', '2022-01-17 16:31:50', 1236, 129);
+insert into message values (10583, 'Oh sh*******t', '2022-01-17 16:32:02', 1236, 235);
