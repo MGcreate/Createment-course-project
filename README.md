@@ -11,7 +11,7 @@ Contributors of this project are:
 | Student | Github |
 | ----------- | ----------- |
 | Laurens | [laurenscreatement](https://github.com/laurenscreatement) |
-| Ming | [MGCreate](https://github.com/MGcreate) |
+| Ming | [MGcreate](https://github.com/MGcreate) |
 | Niels | [nbelle23](https://github.com/nbelle23) |
 | Bas | [bascreatement](https://github.com/bascreatement) |
 | Daan | [PancakeFear](https://pancakefear.github.io/) |
